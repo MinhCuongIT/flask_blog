@@ -10,14 +10,14 @@
             "request": "launch",
             "module": "flask",
             "env": {
-                "FLASK_APP": "flaskblog",
+                "FLASK_APP": "run",
                 "FLASK_ENV": "development",
                 "FLASK_DEBUG": "0"
             },
             "args": [
                 "run",
-                // "--no-debugger",
-                // "--no-reload"
+                "--no-debugger",
+                "--no-reload"
             ],
             "jinja": true
         }
