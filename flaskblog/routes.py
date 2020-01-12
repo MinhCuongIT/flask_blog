@@ -4,7 +4,6 @@ from flaskblog.forms import RegistrationForm, LoginForm
 from flaskblog.models import User, Post
 from flask_login import login_user, current_user, logout_user, login_required
 
-
 posts = [
     {
         'author': 'Corey Schafer',
@@ -43,6 +42,7 @@ def home():
 def about():
     return render_template('about.html', title='Về chúng tôi')
 
+
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     if current_user.is_authenticated:
@@ -57,7 +57,8 @@ def register():
         return redirect(url_for('login'))
     return render_template('register.html', title='Đăng kí tài khoản', form=form)
 
-@app.route('/login',methods=['GET', 'POST'])
+
+@app.route('/login', methods=['GET', 'POST'])
 def login():
     if current_user.is_authenticated:
         return redirect(url_for('home'))
@@ -77,6 +78,7 @@ def login():
 def logout():
     logout_user()
     return redirect(url_for('home'))
+
 
 @app.route('/account')
 @login_required
